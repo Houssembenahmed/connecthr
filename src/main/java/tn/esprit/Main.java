@@ -10,7 +10,7 @@ public class Main {
         produitservice ps = new produitservice();
 
         // Créer un nouveau produit (sans spécifier l'id, car il est auto-incrémenté)
-        produits nouveauProduit = new produits( 10, "Électronique", "huawei", 20);
+        produits nouveauProduit = new produits(10, "Électronique", "huawei", 20);
         boolean isAdded = ps.add(nouveauProduit);
         System.out.println("Produit ajouté ? " + isAdded);
 
@@ -42,11 +42,12 @@ public class Main {
             produits updated = ps.getById(prodToUpdate.getId_prod());
             System.out.println("Produit après mise à jour : " + updated);
 
-            // Suppression du produit
+            /*// Suppression du produit
             boolean isDeleted = ps.delete(prodToUpdate);
             System.out.println("Produit supprimé ? " + isDeleted);
         } else {
             System.out.println("Aucun produit à mettre à jour ou supprimer.");
+        }*/
         }
     }
 }

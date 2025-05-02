@@ -3,12 +3,11 @@ package tn.esprit.models;
 import java.sql.Date;
 
 public class mouvements {
-
     public enum TypeMouv {
         ENTREE, SORTIE
     }
-
     private int id_mouv;
+    private int id_produit;
     private TypeMouv type_mouv;
     private int quantite_mouv;
     private Date date_mouv;
@@ -16,7 +15,7 @@ public class mouvements {
     public mouvements() {
     }
 
-    public mouvements(int id_mouv, TypeMouv type_mouv, int quantite_mouv, Date date_mouv) {
+    public mouvements(int id_prod, TypeMouv type_mouv, int quantite_mouv, Date date_mouv) {
         this.id_mouv = id_mouv;
         this.type_mouv = type_mouv;
         this.quantite_mouv = quantite_mouv;
@@ -31,6 +30,13 @@ public class mouvements {
         this.id_mouv = id_mouv;
     }
 
+    public int getId_produit() {
+        return id_produit;
+    }
+
+    public void setId_produit(int id_produit) {
+        this.id_produit = id_produit;
+    }
     public TypeMouv getType_mouv() {
         return type_mouv;
     }
