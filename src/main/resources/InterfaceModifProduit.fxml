@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="930.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controllers.InterfaceModifProduitController">
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="930.0" styleClass="header">
+            <children>
+                <ImageView fitHeight="68.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../java/tn/esprit/images/logo.png" />
+                    </image>
+                </ImageView>
+                <Separator orientation="VERTICAL" prefHeight="61.0" prefWidth="10.0" />
+                <Label styleClass="header-title" text="Modifier un Produit">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </top>
+    <left>
+        <VBox prefHeight="550.0" prefWidth="266.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="160.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../java/tn/esprit/images/icons8-disposition-du-tableau-de-bord-24.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="dashboardBtn" mnemonicParsing="false" onAction="#showDashboard" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="Dashboard" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="232.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../java/tn/esprit/images/icons8-personnel-50.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="staffBtn" mnemonicParsing="false" onAction="#showStaff" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="Staff" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="232.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../java/tn/esprit/images/icons8-fournisseur-80.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="suppliersBtn" mnemonicParsing="false" onAction="#showSuppliers" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="Fournisseurs" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="81.0" prefWidth="232.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../java/tn/esprit/images/icons8-facture-d'achat-64.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="invoiceBtn" mnemonicParsing="false" onAction="#showInvoices" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="Factures" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="81.0" prefWidth="232.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../java/tn/esprit/images/icons8-stock-50.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="stockBtn" mnemonicParsing="false" onAction="#showStock" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="Stock" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="94.0" prefWidth="232.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../java/tn/esprit/images/icons8-external-crm-basic-ui-elements-2.4-sbts2018-solid-sbts2018-58.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="crmBtn" mnemonicParsing="false" onAction="#showCRM" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="CRM" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <VBox fx:id="contentArea" prefHeight="550.0" prefWidth="664.0" spacing="20.0" styleClass="content" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="70.0" prefWidth="664.0" spacing="10.0">
+                    <children>
+                        <Label prefHeight="45.0" prefWidth="170.0" text="Rechercher Produit:">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="searchNomProduitInput" prefHeight="45.0" prefWidth="150.0" promptText="Nom du produit" />
+                        <TextField fx:id="searchCategorieProduitInput" prefHeight="45.0" prefWidth="150.0" promptText="Catégorie" />
+                        <Button fx:id="searchProduitBtn" mnemonicParsing="false" onAction="#searchProduit" prefHeight="45.0" prefWidth="120.0" styleClass="action-button" text="Chercher" />
+                    </children>
+                </HBox>
+                <HBox prefHeight="300.0" prefWidth="664.0" spacing="20.0" styleClass="form-section">
+                    <children>
+                        <VBox prefHeight="300.0" prefWidth="322.0" spacing="15.0">
+                            <children>
+                                <Label styleClass="section-title" text="Détails Actuels">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <HBox prefHeight="91.0" prefWidth="322.0" spacing="10.0">
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="100.0" text="Nom:">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="currentNomProduit" prefHeight="45.0" prefWidth="200.0" text="N/A" />
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="91.0" prefWidth="322.0" spacing="10.0">
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="100.0" text="Catégorie:">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="currentCategorieProduit" prefHeight="45.0" prefWidth="200.0" text="N/A" />
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="91.0" prefWidth="322.0" spacing="10.0">
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="100.0" text="Prix:">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="currentPrixProduit" prefHeight="45.0" prefWidth="200.0" text="N/A" />
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="91.0" prefWidth="322.0" spacing="10.0">
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="100.0" text="Quantité:">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="currentQuantiteProduit" prefHeight="45.0" prefWidth="200.0" text="N/A" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="300.0" prefWidth="10.0" />
+                        <VBox prefHeight="300.0" prefWidth="322.0" spacing="15.0">
+                            <children>
+                                <Label styleClass="section-title" text="Nouveaux Détails">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <HBox prefHeight="91.0" prefWidth="322.0" spacing="10.0">
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="100.0" text="Nom:">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="newNomProduitInput" prefHeight="45.0" prefWidth="200.0" promptText="Nouveau nom" />
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="91.0" prefWidth="322.0" spacing="10.0">
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="100.0" text="Catégorie:">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="newCategorieProduitInput" prefHeight="45.0" prefWidth="200.0" promptText="Nouvelle catégorie" />
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="91.0" prefWidth="322.0" spacing="10.0">
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="100.0" text="Prix:">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="newPrixProduitInput" prefHeight="45.0" prefWidth="200.0" promptText="Nouveau prix" />
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="91.0" prefWidth="322.0" spacing="10.0">
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="100.0" text="Quantité:">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="newQuantiteProduitInput" prefHeight="45.0" prefWidth="200.0" promptText="Nouvelle quantité" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="664.0" spacing="20.0">
+                    <children>
+                        <Button fx:id="modifierBtn" mnemonicParsing="false" onAction="#modifierProduit" prefHeight="45.0" prefWidth="120.0" styleClass="action-button" text="Modifier" />
+                        <Button fx:id="retourBtn" mnemonicParsing="false" onAction="#retourMain" prefHeight="45.0" prefWidth="120.0" styleClass="action-button" text="Retour" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

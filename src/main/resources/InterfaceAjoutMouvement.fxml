@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="930.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controllers.InterfaceAjoutMouvementController">
+    <top>
+        <VBox prefHeight="150.0" prefWidth="930.0" styleClass="header">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="930.0">
+                    <children>
+                        <ImageView fitHeight="68.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../java/tn/esprit/images/logo.png" />
+                            </image>
+                        </ImageView>
+                        <Separator orientation="VERTICAL" prefHeight="61.0" prefWidth="10.0" />
+                        <Label styleClass="header-title" text="Ajouter un Mouvement">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+    <left>
+        <VBox prefHeight="500.0" prefWidth="266.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="160.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../java/tn/esprit/images/icons8-disposition-du-tableau-de-bord-24.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="dashboardBtn" mnemonicParsing="false" onAction="#showDashboard" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="Dashboard" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="232.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../java/tn/esprit/images/icons8-personnel-50.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="staffBtn" mnemonicParsing="false" onAction="#showStaff" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="Staff" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="232.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../java/tn/esprit/images/icons8-fournisseur-80.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="suppliersBtn" mnemonicParsing="false" onAction="#showSuppliers" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="Fournisseurs" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="81.0" prefWidth="232.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../java/tn/esprit/images/icons8-facture-d'achat-64.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="invoiceBtn" mnemonicParsing="false" onAction="#showInvoices" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="Factures" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="81.0" prefWidth="232.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../java/tn/esprit/images/icons8-stock-50.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="stockBtn" mnemonicParsing="false" onAction="#showStock" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="Stock" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="94.0" prefWidth="232.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../java/tn/esprit/images/icons8-personnel-50.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="crmBtn" mnemonicParsing="false" onAction="#showCRM" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="CRM" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <VBox prefHeight="500.0" prefWidth="664.0" spacing="20.0" styleClass="content" BorderPane.alignment="CENTER">
+            <children>
+                <VBox prefHeight="400.0" prefWidth="664.0" spacing="15.0" styleClass="form-section">
+                    <children>
+                        <HBox prefHeight="91.0" prefWidth="664.0" spacing="10.0">
+                            <children>
+                                <Label alignment="CENTER" prefHeight="45.0" prefWidth="170.0" text="Catégorie:">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="categorieCombo" prefHeight="45.0" prefWidth="200.0" promptText="Sélectionner une catégorie" />
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="91.0" prefWidth="664.0" spacing="10.0">
+                            <children>
+                                <Label alignment="CENTER" prefHeight="45.0" prefWidth="170.0" text="Produit:">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="produitCombo" prefHeight="45.0" prefWidth="200.0" promptText="Sélectionner un produit" />
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="91.0" prefWidth="664.0" spacing="10.0">
+                            <children>
+                                <Label alignment="CENTER" prefHeight="45.0" prefWidth="170.0" text="Type de Mouvement:">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="typeMouvementCombo" prefHeight="45.0" prefWidth="200.0" promptText="Sélectionner le type" />
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="91.0" prefWidth="664.0" spacing="10.0">
+                            <children>
+                                <Label alignment="CENTER" prefHeight="45.0" prefWidth="170.0" text="Quantité:">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="quantiteMouvementInput" prefHeight="45.0" prefWidth="200.0" promptText="Quantité du mouvement" />
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="91.0" prefWidth="664.0" spacing="10.0">
+                            <children>
+                                <Label alignment="CENTER" prefHeight="45.0" prefWidth="170.0" text="Date:">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <DatePicker fx:id="dateMouvementPicker" prefHeight="45.0" prefWidth="200.0" promptText="Sélectionner la date" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="664.0" spacing="20.0">
+                            <children>
+                                <Button fx:id="AjouterMouvementBtn" mnemonicParsing="false" onAction="#AjouterMouvement" prefHeight="45.0" prefWidth="170.0" styleClass="action-button" text="Ajouter mouvement" />
+                                <Button fx:id="retourBtn" mnemonicParsing="false" onAction="#retourMain" prefHeight="45.0" prefWidth="170.0" styleClass="action-button" text="Retour" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

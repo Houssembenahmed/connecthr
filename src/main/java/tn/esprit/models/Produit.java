@@ -1,6 +1,6 @@
 package tn.esprit.models;
 
-public class produits {
+public class Produit {
     private int id_prod;
     private float prix_prod;
     private String categorie_prod;
@@ -8,10 +8,10 @@ public class produits {
     private int quantite_stockee;
 
 
-    public produits() {
+    public Produit() {
     }
 
-    public produits(int id_prod, float prix_prod, String categorie_prod, String nom_prod, int quantite_stockee) {
+    public Produit(int id_prod, float prix_prod, String categorie_prod, String nom_prod, int quantite_stockee) {
         this.id_prod = id_prod;
         this.prix_prod = prix_prod;
         this.categorie_prod = categorie_prod;
@@ -19,7 +19,7 @@ public class produits {
         this.quantite_stockee = quantite_stockee;
     }
 
-    public produits(float prix_prod, String categorie_prod, String nom_prod, int quantite_stockee) {
+    public Produit(float prix_prod, String categorie_prod, String nom_prod, int quantite_stockee) {
         this.prix_prod = prix_prod;
         this.categorie_prod = categorie_prod;
         this.nom_prod = nom_prod;
@@ -39,7 +39,8 @@ public class produits {
     }
 
     public void setPrix_prod(float prix_prod) {
-        this.prix_prod = prix_prod;
+        if (prix_prod>0)
+            this.prix_prod = prix_prod;
     }
 
     public String getCategorie_prod() {
