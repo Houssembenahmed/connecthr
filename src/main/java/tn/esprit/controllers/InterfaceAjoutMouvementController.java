@@ -58,23 +58,18 @@ public class InterfaceAjoutMouvementController implements Initializable {
     @FXML
     private ComboBox<Mouvement.TypeMouv> typeMouvementCombo;
 
-    // Service classes for database operations
     private ProduitService produitService = new ProduitService();
     private MouvementService mouvementService = new MouvementService();
 
-    // Map to store product names to Produit objects
     private Map<String, Produit> produitMap = new HashMap<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Populate typeMouvementCombo with ENUM values
         typeMouvementCombo.getItems().addAll(Mouvement.TypeMouv.values());
 
-        // Populate categorieCombo with available categories
         List<String> categories = produitService.getCategories();
         categorieCombo.getItems().addAll(categories);
 
-        // Set up listener for categorieCombo to update produitCombo
         categorieCombo.getSelectionModel().selectedItemProperty().addListener((obs, oldValue, newValue) -> {
             produitCombo.getItems().clear();
             produitMap.clear();
@@ -93,20 +88,17 @@ public class InterfaceAjoutMouvementController implements Initializable {
 
     @FXML
     void AjouterMouvement(ActionEvent event) {
-        // Retrieve input values
         String categorie = categorieCombo.getValue();
         String produitNom = produitCombo.getValue();
         Mouvement.TypeMouv typeMouvement = typeMouvementCombo.getValue();
         String quantiteText = quantiteMouvementInput.getText().trim();
         LocalDate dateMouvement = dateMouvementPicker.getValue();
 
-        // Validate inputs
         if (categorie == null || produitNom == null || typeMouvement == null || quantiteText.isEmpty() || dateMouvement == null) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Tous les champs doivent être remplis.");
             return;
         }
 
-        // Retrieve Produit from map
         Produit produit = produitMap.get(produitNom);
         if (produit == null) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Produit non trouvé.");
@@ -125,23 +117,18 @@ public class InterfaceAjoutMouvementController implements Initializable {
             return;
         }
 
-        // Convert LocalDate to java.util.Date
         Date date = java.sql.Date.valueOf(dateMouvement);
 
-        // Create Mouvement object
         Mouvement mouvement = new Mouvement();
         mouvement.setId_produit(produit.getId_prod());
         mouvement.setType_mouv(typeMouvement);
         mouvement.setQuantite_mouv(quantite);
         mouvement.setDate_mouv(date);
 
-        // Add movement to database
         boolean success = mouvementService.add(mouvement);
 
-        // Provide feedback
         if (success) {
             showAlert(Alert.AlertType.INFORMATION, "Succès", "Mouvement ajouté avec succès.");
-            // Clear input fields
             categorieCombo.getSelectionModel().clearSelection();
             produitCombo.getItems().clear();
             produitMap.clear();
@@ -153,7 +140,6 @@ public class InterfaceAjoutMouvementController implements Initializable {
         }
     }
 
-    // Helper method to show alerts
     private void showAlert(Alert.AlertType alertType, String title, String message) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
@@ -164,36 +150,29 @@ public class InterfaceAjoutMouvementController implements Initializable {
 
     @FXML
     void retourMain(ActionEvent event) {
-        // To be implemented
     }
 
     @FXML
     void showCRM(ActionEvent event) {
-        // To be implemented
     }
 
     @FXML
     void showDashboard(ActionEvent event) {
-        // To be implemented
     }
 
     @FXML
     void showInvoices(ActionEvent event) {
-        // To be implemented
     }
 
     @FXML
     void showStaff(ActionEvent event) {
-        // To be implemented
     }
 
     @FXML
     void showStock(ActionEvent event) {
-        // To be implemented
     }
 
     @FXML
     void showSuppliers(ActionEvent event) {
-        // To be implemented
     }
 }

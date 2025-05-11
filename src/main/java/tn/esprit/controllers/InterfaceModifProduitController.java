@@ -74,35 +74,28 @@ public class InterfaceModifProduitController {
 
     private ProduitService produitService = new ProduitService();
 
-    // Store the ID of the product being modified
     private int currentProduitId = -1;
 
     @FXML
     void searchProduit(ActionEvent event) {
-        // Retrieve search criteria
         String nom = searchNomProduitInput.getText().trim();
         String categorie = searchCategorieProduitInput.getText().trim();
 
-        // Validate inputs
         if (nom.isEmpty() && categorie.isEmpty()) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Veuillez entrer au moins un critère de recherche (nom ou catégorie).");
             return;
         }
 
-        // Fetch product from database
         Produit produit = produitService.getByNomAndCategorie(nom.isEmpty() ? null : nom, categorie.isEmpty() ? null : categorie);
 
         if (produit != null) {
-            // Update current details in labels
             currentNomProduit.setText(produit.getNom_prod());
             currentCategorieProduit.setText(produit.getCategorie_prod());
             currentPrixProduit.setText(String.valueOf(produit.getPrix_prod()));
             currentQuantiteProduit.setText(String.valueOf(produit.getQuantite_stockee()));
-            // Store product ID for modification
             currentProduitId = produit.getId_prod();
             showAlert(Alert.AlertType.INFORMATION, "Succès", "Produit trouvé.");
         } else {
-            // Clear current details and reset product ID
             currentNomProduit.setText("N/A");
             currentCategorieProduit.setText("N/A");
             currentPrixProduit.setText("N/A");
@@ -114,19 +107,16 @@ public class InterfaceModifProduitController {
 
     @FXML
     void modifierProduit(ActionEvent event) {
-        // Check if a product is selected
         if (currentProduitId == -1) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Veuillez d'abord rechercher un produit à modifier.");
             return;
         }
 
-        // Retrieve new input values
         String newNom = newNomProduitInput.getText().trim();
         String newCategorie = newCategorieProduitInput.getText().trim();
         String newPrixText = newPrixProduitInput.getText().trim();
         String newQuantiteText = newQuantiteProduitInput.getText().trim();
 
-        // Validate inputs
         if (newNom.isEmpty() || newCategorie.isEmpty() || newPrixText.isEmpty() || newQuantiteText.isEmpty()) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Tous les champs doivent être remplis.");
             return;
@@ -150,7 +140,6 @@ public class InterfaceModifProduitController {
             return;
         }
 
-        // Create updated Produit object
         Produit updatedProduit = new Produit();
         updatedProduit.setId_prod(currentProduitId);
         updatedProduit.setNom_prod(newNom);
@@ -158,18 +147,15 @@ public class InterfaceModifProduitController {
         updatedProduit.setPrix_prod(newPrix);
         updatedProduit.setQuantite_stockee(newQuantite);
 
-        // Call the update method
         boolean success = produitService.update(updatedProduit);
 
-        // Provide feedback and update UI
         if (success) {
             showAlert(Alert.AlertType.INFORMATION, "Succès", "Produit modifié avec succès.");
-            // Update current product details in labels
             currentNomProduit.setText(newNom);
             currentCategorieProduit.setText(newCategorie);
             currentPrixProduit.setText(String.valueOf(newPrix));
             currentQuantiteProduit.setText(String.valueOf(newQuantite));
-            // Clear input fields
+
             newNomProduitInput.clear();
             newCategorieProduitInput.clear();
             newPrixProduitInput.clear();
@@ -218,4 +204,7 @@ public class InterfaceModifProduitController {
 
     }
 
+    public void setProduit(Produit produit) {
+
+    }
 }

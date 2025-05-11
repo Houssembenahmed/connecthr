@@ -2,6 +2,7 @@ package tn.esprit;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -12,10 +13,10 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) {
 
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/InterfaceAjoutMouvement.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/interfacePrincipale.fxml"));
         try {
-
-            Scene scene = new Scene(loader.load());
+    Parent root = loader.load();
+            Scene scene = new Scene(root);
             primaryStage.setTitle("Ajouter un produit");
             primaryStage.setScene(scene);
             primaryStage.show();

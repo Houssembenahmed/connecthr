@@ -4,7 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="930.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controllers.InterfaceAjoutMouvementController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="930.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/22.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controllers.InterfaceAjoutMouvementController">
     <top>
         <VBox prefHeight="150.0" prefWidth="930.0" styleClass="header">
             <children>
@@ -12,7 +12,7 @@
                     <children>
                         <ImageView fitHeight="68.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../java/tn/esprit/images/logo.png" />
+                                <Image url="http://localhost/images/logo.png" />
                             </image>
                         </ImageView>
                         <Separator orientation="VERTICAL" prefHeight="61.0" prefWidth="10.0" />
@@ -33,7 +33,7 @@
                     <children>
                         <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../java/tn/esprit/images/icons8-disposition-du-tableau-de-bord-24.png" />
+                                <Image url="http://localhost/images/icons8-disposition-du-tableau-de-bord-24.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="dashboardBtn" mnemonicParsing="false" onAction="#showDashboard" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="Dashboard" />
@@ -43,7 +43,7 @@
                     <children>
                         <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../java/tn/esprit/images/icons8-personnel-50.png" />
+                                <Image url="http://localhost/images/icons8-personnel-50.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="staffBtn" mnemonicParsing="false" onAction="#showStaff" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="Staff" />
@@ -53,7 +53,7 @@
                     <children>
                         <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../java/tn/esprit/images/icons8-fournisseur-80.png" />
+                                <Image url="http://localhost/images/icons8-fournisseur-80.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="suppliersBtn" mnemonicParsing="false" onAction="#showSuppliers" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="Fournisseurs" />
@@ -63,7 +63,7 @@
                     <children>
                         <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../java/tn/esprit/images/icons8-facture-d'achat-64.png" />
+                                <Image url="http://localhost/images/icons8-facture-d'achat-64.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="invoiceBtn" mnemonicParsing="false" onAction="#showInvoices" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="Factures" />
@@ -73,7 +73,7 @@
                     <children>
                         <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../java/tn/esprit/images/icons8-stock-50.png" />
+                                <Image url="http://localhost/images/icons8-stock-50.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="stockBtn" mnemonicParsing="false" onAction="#showStock" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="Stock" />
@@ -83,7 +83,7 @@
                     <children>
                         <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../java/tn/esprit/images/icons8-personnel-50.png" />
+                                <Image url="http://localhost/images/icons8-personnel-50.png" />
                             </image>
                         </ImageView>
                         <Button fx:id="crmBtn" mnemonicParsing="false" onAction="#showCRM" prefHeight="50.0" prefWidth="170.0" styleClass="sidebar-button" text="CRM" />

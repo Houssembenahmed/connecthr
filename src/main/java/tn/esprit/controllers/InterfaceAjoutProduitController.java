@@ -46,18 +46,15 @@ public class InterfaceAjoutProduitController {
     @FXML
     private Button suppliersBtn;
 
-    // Assume a service class that contains the add method
     private ProduitService produitService = new ProduitService();
 
     @FXML
     void AjouterProduit(ActionEvent event) {
-        // Retrieve input values
         String nom = nomProduitInput.getText().trim();
         String categorie = categorieProduitInput.getText().trim();
         String prixText = prixProduitInput.getText().trim();
         String quantiteText = quantiteProduitInput.getText().trim();
 
-        // Validate inputs
         if (nom.isEmpty() || categorie.isEmpty() || prixText.isEmpty() || quantiteText.isEmpty()) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Tous les champs doivent être remplis.");
             return;
@@ -81,13 +78,10 @@ public class InterfaceAjoutProduitController {
             return;
         }
 
-        // Create Produit object
         Produit produit = new Produit(prix, categorie, nom, quantite);
 
-        // Call the add method
         boolean success = produitService.add(produit);
 
-        // Provide feedback
         if (success) {
             showAlert(Alert.AlertType.INFORMATION, "Succès", "Produit ajouté avec succès.");
             // Clear input fields
